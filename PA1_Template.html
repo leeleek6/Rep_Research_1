@@ -169,11 +169,10 @@ pre code {
 
 <div id="reproducible-research-course-project-1" class="section level1">
 <h1>Reproducible Research Course Project 1</h1>
-<p><strong>ACTUALLY ANSWER QUESTIONS</strong></p>
 <div id="loading-and-preprocessing-data" class="section level2">
 <h2>Loading and preprocessing data</h2>
 <p>Here I load the dataset from the unzipped file. Then I classify the date column as a date.</p>
-<pre class="r"><code>#unzip(&quot;repdata_data_activity.zip&quot;)
+<pre class="r"><code>unzip(&quot;repdata_data_activity.zip&quot;)
 activity &lt;- read.csv(&quot;activity.csv&quot;, sep=&quot;,&quot;)
 activity$date &lt;- as.Date.character(activity$date)</code></pre>
 </div>

@@ -1,11 +1,11 @@
-# Reproducible Research Course Project 1  
-**ACTUALLY ANSWER QUESTIONS**  
+Reproducible Research Course Project 1  
+======================================
 
 ## Loading and preprocessing data  
 
 Here I load the dataset from the unzipped file. Then I classify the date column as a date.  
 ```{r}
-#unzip("repdata_data_activity.zip")
+unzip("repdata_data_activity.zip")
 activity <- read.csv("activity.csv", sep=",")
 activity$date <- as.Date.character(activity$date)
 ```
