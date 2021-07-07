@@ -1,4 +1,3 @@
-library(dplyr)
 library(lubridate)
 unzip("repdata_data_activity.zip")
 
@@ -54,8 +53,8 @@ wendsums <- aggregate(steps ~ interval, wend, sum)
 wdaysums$steps <- wdaysums$steps/length(unique(wday$date))
 wendsums$steps <- wendsums$steps/length(unique(wend$date))
 
-par(mfrow=c(1,2))
+par(mfrow=c(1,2),mar=c(5,5,5,4))
 plot(wdaysums$interval,wdaysums$steps,type="l",xlab="Interval",ylab="Average Steps"
-     ,main="Average Steps Over Intervals Across Weekdays")
+     ,main="Avg Steps For Intervals Across Weekdays")
 plot(wendsums$interval,wendsums$steps,type="l",ylim = range(wdaysums$steps),xlab="Interval",ylab="Average Steps"
-     ,main="Average Steps Over Intervals Across Weekends")
+     ,main="Avg Steps For Intervals Across Weekends")
