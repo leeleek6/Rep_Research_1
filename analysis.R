@@ -1,7 +1,7 @@
-library(lubridate)
-unzip("repdata_data_activity.zip")
+
 
 ##Loading and preprocessing the data
+unzip("repdata_data_activity.zip")
 activity <- read.csv("activity.csv", sep=",")
 activity$date <- as.Date.character(activity$date)
 
@@ -42,6 +42,7 @@ mean2 <- mean(stepsums2$steps)
 median2 <- median(stepsums2$steps)
 
 ##Are there differences in activity patterns between weekdays and weekends?
+library(lubridate)
 days <- wday(activity2$date)
 days[days==1 | days==7] <- "weekend"
 days[days %in% 2:6] <- "weekday"
